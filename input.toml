@@ -1,0 +1,6 @@
+# An example input file
+[miller]
+A = 2.2     # Aspect ratio
+kappa = 3.0
+delta = 0.7
+R0 = 3.2
