@@ -8,4 +8,4 @@ dependencies = [
 ]
 
 [project.scripts]
-miller = "miller.__init__:main()"
+miller = "miller:main"

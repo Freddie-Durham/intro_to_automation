@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import argparse
+
 
 
 def plot_surface(R_s, Z_s, save_fig=True):
@@ -22,6 +24,7 @@ def flux_surface(
     kappa,
     delta,
     R0,
+    filename,
     theta=np.linspace(0, 2 * np.pi),
 ):
     """Calculates flux surface using Miller parameterisation
@@ -56,7 +59,22 @@ def area(r, z):
 
 
 def main():
-    R_s, Z_s = flux_surface(2.2, 1.5, 0.3, 2.5)
+    
+    parser = argparse.ArgumentParser(
+    prog="Miller",
+    description="Runs miller and generates plot",
+    epilog="bottom text",
+    )
+
+    parser.add_argument("--filename")  # positional argument
+    parser.add_argument("--A")  # option that takes a value
+    parser.add_argument("--kappa")
+    parser.add_argument("--delta")
+    parser.add_argument("--R0")
+
+    args = parser.parse_args()
+
+    R_s, Z_s = flux_surface(A=args.A,kappa=args.kappa,delta=args.delta,R0=args.R0,filename=args.filename)
     plot_surface(R_s, Z_s)
 
 
