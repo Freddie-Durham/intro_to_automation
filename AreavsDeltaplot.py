@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def plot_area(A, D, save_fig=True):
+def plot_area(A, D, pltname="AvsD.png", save_fig=True):
     """plot area vs delta
 
     Args:
@@ -16,7 +16,7 @@ def plot_area(A, D, save_fig=True):
     plt.xlabel("Area")
     plt.ylabel("Delta")
     if save_fig:
-        plt.savefig("AvsD.png")
+        plt.savefig(pltname)
 
 
 def get_area(deltas):
